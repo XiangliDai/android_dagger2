@@ -16,8 +16,14 @@
 package com.example.xdai.demoapplication;
 
 import android.app.Activity;
+import android.location.LocationManager;
+
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
+
+import static android.content.Context.LOCATION_SERVICE;
 
 /**
  * A module to wrap the Activity state and expose it to the graph.
@@ -36,4 +42,9 @@ public class ActivityModule {
   @Provides @PerActivity Activity activity() {
     return activity;
   }
+/*
+    @Provides  @PerActivity
+    LocationManager provideLocationManager() {
+        return (LocationManager) activity().getSystemService(LOCATION_SERVICE);
+    }*/
 }

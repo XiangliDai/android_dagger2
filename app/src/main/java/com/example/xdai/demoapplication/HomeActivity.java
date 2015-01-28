@@ -15,7 +15,6 @@
  */
 package com.example.xdai.demoapplication;
 
-import android.app.Activity;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -24,14 +23,14 @@ import javax.inject.Inject;
 
 public class HomeActivity extends FragmentActivity {
   @Inject LocationManager locationManager;
-    private HomeComponent component;
-    HomeComponent initComponent() {
+    private HomeActivityComponent component;
+    HomeActivityComponent initComponent() {
     return component;
   }
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    this.component =  Dagger_HomeComponent.builder()
+    this.component =  Dagger_HomeActivityComponent.builder()
         .applicationComponent(((DemoApplication) getApplication()).component())
         .activityModule(new ActivityModule(this))
         .build();

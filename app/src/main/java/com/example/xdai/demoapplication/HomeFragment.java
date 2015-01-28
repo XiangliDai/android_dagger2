@@ -15,6 +15,7 @@
  */
 package com.example.xdai.demoapplication;
 
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,17 +28,18 @@ import static android.view.Gravity.CENTER;
 
 public class HomeFragment extends Fragment {
   @Inject ActivityTitleController titleController;
-
+  @Inject LocationManager locationManager;
   @Override public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
   ((HomeActivity)getActivity()).initComponent().inject(this);
   }
 
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
-      Bundle savedInstanceState) {
+    Bundle savedInstanceState) {
     TextView tv = new TextView(getActivity());
     tv.setGravity(CENTER);
     tv.setText("Hello, World");
+
     return tv;
   }
 

@@ -45,4 +45,6 @@ public class DemoApplicationModule {
   @Provides @Singleton LocationManager provideLocationManager() {
     return (LocationManager) application.getSystemService(LOCATION_SERVICE);
   }
+
+
 }
